@@ -56,6 +56,7 @@ class wordle {
     this.history = [...this.history, this.currentGuess];
     this.turn = this.turn + 1;
     if (this.turn === 6) {
+      games.delete(this.gid);
       return await gameLose(this.gid, this.language, this.solution);
     }
     await this.sendImage();
