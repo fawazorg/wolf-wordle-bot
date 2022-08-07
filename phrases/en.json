@@ -1,0 +1,10 @@
+[
+  {
+    "name": "command_default",
+    "value": "!wordle"
+  },
+  {
+    "name": "command_help",
+    "value": "help"
+  }
+]
