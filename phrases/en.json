@@ -6,5 +6,153 @@
   {
     "name": "command_help",
     "value": "help"
+  },
+  {
+    "name": "command_info",
+    "value": "info"
+  },
+  {
+    "name": "command_my_score",
+    "value": "score"
+  },
+  {
+    "name": "command_top_players",
+    "value": "top"
+  },
+  {
+    "name": "command_admin",
+    "value": "admin"
+  },
+  {
+    "name": "command_admin_add",
+    "value": "add"
+  },
+  {
+    "name": "command_admin_delete",
+    "value": "delete"
+  },
+  {
+    "name": "command_admin_join",
+    "value": "join"
+  },
+  {
+    "name": "command_admin_solve",
+    "value": "solve"
+  },
+  {
+    "name": "message_admin_default",
+    "value": "welcome to wordle admin\n\nUse !wordle admin help to start."
+  },
+  {
+    "name": "message_admin_help",
+    "value": [
+      "welcome to admin menu:",
+      "!wordle admin add <word> - add a new word",
+      "!wordle admin delete <word> - delete a word",
+      "!wordle admin solve <groupId> - show the solution for a group",
+      "!wordle admin join <groupID> - join group",
+      "!wordle admin help - show this menu"
+    ]
+  },
+  {
+    "name": "message_help",
+    "value": [
+      "Welcome to wordle bot:",
+      "!wordle - start new game.",
+      "!wordle info - show a simple explanation about the game",
+      "!wordle help - show this menu",
+      "!wordle score - show your score and your rank",
+      "!wordle top - show the top players"
+    ]
+  },
+  {
+    "name": "message_info",
+    "value": "Guess the WORDLE in 6 tries.\n\nEach guess must be a valid 5-letter word. Hit the enter button to submit.\n\nAfter each guess, the color of the tiles will change to show how close your guess was to the word.\n\nThe green letter means is in the word and in the correct spot.\n\nThe yellow letter means is in the word but in the wrong spot.\n\nThe Gray letter means is not in the word in any spot."
+  },
+  {
+    "name": "message_start",
+    "value": "/me The game has been begin, start guess with five letter word, good luck guys."
+  },
+  {
+    "name": "message_lose",
+    "value": "/me (n) Unfortunately, the game is over, and the word was: {solution} .\n Good luck next time."
+  },
+  {
+    "name": "message_history",
+    "value": "/me (n) You have already entered this word \"{guess}\", try another word."
+  },
+  {
+    "name": "message_win",
+    "value": "/me I'm so glad that user {nickname} ({id}) with his usual cleverness solved the word, and he got a {score} points."
+  },
+  {
+    "name": "message_my_score",
+    "value": "Your rank and total points:\n\nRank: {GlobalRank}\nTotal: {score} points \n{nickname} ( {id} )"
+  },
+  {
+    "name": "message_my_score_error",
+    "value": "You currently have no points in this bot\n{nickname} ( {id} )"
+  },
+  {
+    "name": "message_top_players",
+    "value": "Top 10 List: \n\n{list}"
+  },
+  {
+    "name": "message_admin_add",
+    "value": "(y) The word has been added successfully."
+  },
+  {
+    "name": "message_admin_add_error",
+    "value": "(n) The word must be 5 letters long."
+  },
+  {
+    "name": "message_admin_add_exists",
+    "value": "(n) The word is already exist."
+  },
+  {
+    "name": "message_admin_delete",
+    "value": "(y) The word has been successfully deleted."
+  },
+  {
+    "name": "message_admin_delete_error",
+    "value": "(n) We couldn't find the word."
+  },
+  {
+    "name": "message_admin_solve",
+    "value": "The solution is : {solution}"
+  },
+  {
+    "name": "message_admin_solve_error",
+    "value": "(n) There is no game in this group."
+  },
+  {
+    "name": "message_admin_join",
+    "value": [
+      { "code": 200, "msg": "The bot has been successfully joined." },
+      { "code": 404, "msg": "The Group does not exist." },
+      { "code": 401, "subCode": 1, "msg": "Invalid password." },
+      {
+        "code": 403,
+        "subCode": 4,
+        "msg": "This group requires you to have earned a higher user level."
+      },
+      { "code": 403, "subCode": 100, "msg": "This group is currently full." },
+      {
+        "code": 403,
+        "subCode": 101,
+        "msg": "You've joined the maximum permitted number of groups."
+      },
+      { "code": 403, "subCode": 105, "msg": "This group no longer seems to exist." },
+      { "code": 403, "subCode": 107, "msg": "It seems that you're banned from this group." },
+      { "code": 403, "subCode": 110, "msg": "It looks like you're already in this group!" },
+      { "code": 403, "subCode": 112, "msg": "This group is restricted to new users." },
+      { "code": 403, "subCode": 115, "msg": "This group has been closed." },
+      { "code": 403, "subCode": 116, "msg": "Perhaps you've created too many accounts?" },
+      { "code": 403, "subCode": 117, "msg": "This group can only be joined from a game." }
+    ]
+  },
+  {
+    "name": "error_must_be_number",
+    "value": "(n) The entry must be a number."
   }
 ]

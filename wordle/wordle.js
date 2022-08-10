@@ -1,4 +1,5 @@
 const { gameWon, gameStart, gameHistory, gameLose, Image } = require("./sender");
+const { addScore } = require("./score");
 const games = require("../data/games");
 class wordle {
   gid;
@@ -45,12 +46,14 @@ class wordle {
     this.setGuesses();
     if (this.currentGuess === this.solution) {
       await this.sendImage();
-      await gameWon(this.gid, this.language, userID);
+      const score = 6 - this.turn;
+      await addScore(userID, score);
+      await gameWon(this.gid, this.language, userID, score);
       games.delete(this.gid);
       return;
     }
-    //this.setGuesses();
     if (this.history.includes(this.currentGuess)) {
+      this.currentGuess = "";
       return await gameHistory(this.gid, this.language, this.currentGuess);
     }
     this.history = [...this.history, this.currentGuess];
@@ -62,9 +65,7 @@ class wordle {
     await this.sendImage();
     this.currentGuess = "";
   }
-  rtl() {
-    return this.language === "ar" ? true : false;
-  }
+
   async sendImage() {
     return await Image(this.gid, this.language, this.guesses);
   }
@@ -72,6 +73,12 @@ class wordle {
     let newGuesses = [...this.guesses];
     newGuesses[this.turn] = this.formatGuesses();
     this.guesses = newGuesses;
+  }
+  get solution() {
+    return this.solution;
+  }
+  get language() {
+    return this.language;
   }
 }
 

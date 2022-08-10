@@ -1,4 +1,12 @@
 const { createCanvas, registerFont } = require("canvas");
+
+const isLanguage = (text, language) => {
+  const AR_LETTERS = /^[\u0621-\u064A]+$/;
+  const EN_LETTERS = /^[a-zA-Z]+$/;
+  const regex = language === "ar" ? AR_LETTERS : EN_LETTERS;
+  return regex.test(text);
+};
+
 const toImage = (rows) => {
   const canvas = createCanvas(700, 840);
   registerFont("data/AbdoLine.ttf", { family: "AbdoLine" });
@@ -84,4 +92,4 @@ const toImage = (rows) => {
   return canvas.toBuffer("image/jpeg");
 };
 
-module.exports = { toImage };
+module.exports = { toImage, isLanguage };

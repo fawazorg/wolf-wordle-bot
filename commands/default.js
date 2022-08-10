@@ -2,6 +2,7 @@ const { Command } = require("wolf.js");
 const { api } = require("../bot");
 const { start } = require("../wordle/game");
 const games = require("../data/games");
+
 const COMMAND_TRIGGER = "command_default";
 
 Default = async (api, command) => {

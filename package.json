@@ -1,8 +1,28 @@
 {
+  "name": "wolf-wordle-bot",
+  "version": "0.0.2",
+  "main": "index.js",
   "dependencies": {
     "canvas": "^2.9.3",
+    "cli-progress": "^3.11.2",
     "dotenv": "^16.0.1",
+    "mongoose": "^6.5.1",
     "wolf.js": "^1.6.1"
   },
-  "version": "0.0.2"
+  "devDependencies": {},
+  "scripts": {
+    "seed": "node seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fawazorg/wolf-wordle-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fawazorg/wolf-wordle-bot/issues"
+  },
+  "homepage": "https://github.com/fawazorg/wolf-wordle-bot#readme",
+  "description": ""
 }

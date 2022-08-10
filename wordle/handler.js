@@ -1,4 +1,5 @@
 const games = require("../data/games");
+const { isLanguage } = require("../utility");
 
 /**
  *
@@ -15,13 +16,8 @@ const handleMessages = async (msg) => {
   }
   // submit the word
   let game = games.get(msg.targetGroupId);
-  const AR_LETTERS = /^[\u0621-\u064A\u0660-\u0669]+$/;
-  const EN_LETTERS = /^[a-zA-Z]+$/;
-  if (game.rtl() && AR_LETTERS.test(msg.body)) {
-    return await game.submitGuess(msg.body, msg.sourceSubscriberId);
-  }
-  if (!game.rtl() && EN_LETTERS.test(msg.body)) {
-    return await game.submitGuess(msg.body, msg.sourceSubscriberId);
+  if (isLanguage(msg.body, game.language)) {
+    await game.submitGuess(msg.body.toUpperCase(), msg.sourceSubscriberId);
   }
 };
 

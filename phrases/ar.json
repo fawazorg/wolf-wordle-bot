@@ -12,12 +12,61 @@
     "value": "تعليمات"
   },
   {
+    "name": "command_my_score",
+    "value": "مجموعي"
+  },
+  {
+    "name": "command_top_players",
+    "value": "شامل"
+  },
+  {
+    "name": "command_admin",
+    "value": "مدير"
+  },
+  {
+    "name": "command_admin",
+    "value": "م"
+  },
+  {
+    "name": "command_admin_add",
+    "value": "اضافة"
+  },
+  {
+    "name": "command_admin_delete",
+    "value": "حذف"
+  },
+  {
+    "name": "command_admin_join",
+    "value": "انضم"
+  },
+  {
+    "name": "command_admin_solve",
+    "value": "حل"
+  },
+  {
+    "name": "message_admin_default",
+    "value": "مرحبا بك في اوامر المدير.\n\n !كلمات مدير مساعدة - لعرض قائمة المساعدة"
+  },
+  {
+    "name": "message_admin_help",
+    "value": [
+      "مرحبا لك في ادارة بوت كلمات:",
+      "!كلمات مدير اضافة <الكلمة> - لاضافة كلمة جديدة",
+      "!كلمات مدير حذف <الكلمة> - لحذف كلمة موجودة",
+      "!كلمات مدير حل <رقم الغرفة> - لعرض حل اللعبة",
+      "!كلمات مدير انضم <رقم الغرفة> - للانضمام لغرفة محددة",
+      "!كلمات مدير مساعدة - لعرض هذه القائمة"
+    ]
+  },
+  {
     "name": "message_help",
     "value": [
       "مرحبا بك في بوت كلمات:",
       "!كلمات - لبدء لعبة جديدة",
       "!كلمات تعليمات - لعرض شرح مبسط عن اللعبة",
-      "!كلمات مساعدة - لعرض هذه القائمة"
+      "!كلمات مساعدة - لعرض هذه القائمة",
+      "!كلمات مجموعي - لعرض مجموعك في هذا البوت",
+      "!كلمات شامل - لعرض افضل اللاعبين في البوت"
     ]
   },
   {
@@ -38,6 +87,68 @@
   },
   {
     "name": "message_win",
-    "value": "/me أنا سعيد للغاية تمكن العضو {nickname} ({id}) بذكائه المعهود من حل الكلمة المطلوبة."
+    "value": "/me أنا سعيد للغاية تمكن العضو {nickname} ({id}) بذكائه المعهود من حل الكلمة المطلوبة, وحصل على {score} نقطة."
+  },
+  {
+    "name": "message_my_score",
+    "value": "ترتيبك و مجموعك الكلي على مستوى ولف:\n\nالترتيب: {GlobalRank}\nالمجموع: {score} نقطة\n{nickname} ( {id} )"
+  },
+  {
+    "name": "message_my_score_error",
+    "value": "ليس لديك نقاط حاليا في هذا البوت\n{nickname} ( {id} )"
+  },
+  {
+    "name": "message_top_players",
+    "value": "قائمة افضل اللاعبين : \n\n{list}"
+  },
+  {
+    "name": "message_admin_add",
+    "value": "(y) تم اضافة الكلمة بنجاح."
+  },
+  {
+    "name": "message_admin_add_error",
+    "value": "(n) الكلمة لابد ان يكون طولها 5 احرف."
+  },
+  {
+    "name": "message_admin_add_exists",
+    "value": "(n) الكلمة موجودة بالفعل."
+  },
+  {
+    "name": "message_admin_delete",
+    "value": "(y) تم حذف الكلمة بنجاح."
+  },
+  {
+    "name": "message_admin_delete_error",
+    "value": "(n) لم نتمكن من ايجاد الكلمة."
+  },
+  {
+    "name": "message_admin_solve",
+    "value": "حل الكلمة هو : {solution}"
+  },
+  {
+    "name": "message_admin_solve_error",
+    "value": "(n) لا توجد لعبة في هذه الغرفة."
+  },
+  {
+    "name": "message_admin_join",
+    "value": [
+      { "code": 200, "msg": "تم الانضمام للغرفة بنجاح." },
+      { "code": 404, "msg": "الغرفة غير موجودة." },
+      { "code": 401, "subCode": 1, "msg": "الغرفة محمية بكلمة مرور." },
+      { "code": 403, "subCode": 4, "msg": "مستوى دخول الغرفة عالي." },
+      { "code": 403, "subCode": 100, "msg": "الغرفة ممتلئة." },
+      { "code": 403, "subCode": 101, "msg": "لا يمكن للبوت دخول غرف أكثر." },
+      { "code": 403, "subCode": 105, "msg": "الغرفة ليست موجودة حاليا." },
+      { "code": 403, "subCode": 107, "msg": "البوت متبند من الغرفة." },
+      { "code": 403, "subCode": 110, "msg": "البوت موجود بالغرفة اصلا." },
+      { "code": 403, "subCode": 112, "msg": "الغرفة محظورة على الاعضاء الجدد." },
+      { "code": 403, "subCode": 115, "msg": "الغرفة مغلقة." },
+      { "code": 403, "subCode": 116, "msg": "يمكن انك مسوي حسابات كثيرة؟" },
+      { "code": 403, "subCode": 117, "msg": "يمكن الانضمام للغرفة هذي من خلال لعبة." }
+    ]
+  },
+  {
+    "name": "error_must_be_number",
+    "value": "(n) المدخل لابد ان يكون رقم."
   }
 ]

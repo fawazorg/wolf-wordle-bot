@@ -1,5 +1,6 @@
 const { Command } = require("wolf.js");
 const { api } = require("../bot");
+
 const COMMAND_TRIGGER = "command_info";
 const COMMAND_RESPONSE = "message_info";
 
