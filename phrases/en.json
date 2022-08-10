@@ -71,19 +71,19 @@
   },
   {
     "name": "message_start",
-    "value": "/me The game has been begin, start guess with five letter word, good luck guys."
+    "value": "The game has been begin, start guess with five letter word, good luck guys."
   },
   {
     "name": "message_lose",
-    "value": "/me (n) Unfortunately, the game is over, and the word was: {solution} .\n Good luck next time."
+    "value": "(n) Unfortunately, the game is over, and the word was: {solution} .\n Good luck next time."
   },
   {
     "name": "message_history",
-    "value": "/me (n) You have already entered this word \"{guess}\", try another word."
+    "value": "(n) You have already entered this word \"{guess}\", try another word."
   },
   {
     "name": "message_win",
-    "value": "/me I'm so glad that user {nickname} ({id}) with his usual cleverness solved the word, and he got a {score} points."
+    "value": "I'm so glad that user {nickname} ({id}) with his usual cleverness solved the word, and he got a {score} points."
   },
   {
     "name": "message_my_score",

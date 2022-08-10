@@ -7,7 +7,7 @@ const getPhrase = (language, phrase) => {
 
 const gameStart = async (gid, language) => {
   let phrase = getPhrase(language, "message_start");
-  await api.messaging().sendGroupMessage(gid, phrase);
+  await api.messaging().sendGroupMessage(gid, phrase, { formatting: { me: true } });
 };
 
 const gameWon = async (gid, language, uid, score) => {
@@ -17,17 +17,17 @@ const gameWon = async (gid, language, uid, score) => {
     .utility()
     .string()
     .replace(phrase, { nickname: user.nickname, id: user.id, score });
-  await api.messaging().sendGroupMessage(gid, text);
+  await api.messaging().sendGroupMessage(gid, text, { formatting: { me: true } });
 };
 const gameLose = async (gid, language, solution) => {
   let phrase = getPhrase(language, "message_lose");
   let text = api.utility().string().replace(phrase, { solution });
-  await api.messaging().sendGroupMessage(gid, text);
+  await api.messaging().sendGroupMessage(gid, text, { formatting: { me: true } });
 };
 const gameHistory = async (gid, language, guess) => {
   let phrase = getPhrase(language, "message_history");
   let text = api.utility().string().replace(phrase, { guess });
-  await api.messaging().sendGroupMessage(gid, text);
+  await api.messaging().sendGroupMessage(gid, text, { formatting: { me: true } });
 };
 const Image = async (gid, language, formattedGuess) => {
   await api.messaging().sendGroupMessage(gid, toImage(formattedGuess));
