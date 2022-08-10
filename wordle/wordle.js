@@ -43,8 +43,8 @@ class wordle {
   }
   async submitGuess(guess, userID) {
     this.currentGuess = guess;
-    this.setGuesses();
     if (this.currentGuess === this.solution) {
+      this.setGuesses();
       await this.sendImage();
       const score = 6 - this.turn;
       await addScore(userID, score);
@@ -53,9 +53,10 @@ class wordle {
       return;
     }
     if (this.history.includes(this.currentGuess)) {
-      this.currentGuess = "";
       return await gameHistory(this.gid, this.language, this.currentGuess);
     }
+    this.setGuesses();
+
     this.history = [...this.history, this.currentGuess];
     this.turn = this.turn + 1;
     if (this.turn === 6) {
