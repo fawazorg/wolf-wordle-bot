@@ -1,6 +1,6 @@
 const cliProgress = require("cli-progress");
 const wordsAR = require("./data/words-ar.json");
-const wordsEN = require("./data/words-EN.json");
+const wordsEN = require("./data/words-en.json");
 const Word = require("./models/word");
 const { db } = require("./db");
 
