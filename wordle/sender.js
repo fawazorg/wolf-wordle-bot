@@ -87,7 +87,7 @@ const sendTopPlayers = async (gid, language, players = []) => {
   let list = await players.reduce(async (pv, user, i) => {
     let names = await pv;
     let { nickname, id } = await api.subscriber().getById(user.uid);
-    return [...names, `${i + 1} ـ  ${nickname}(${id}) ـ ${user.score}`];
+    return [...names, `${i + 1} ـ  ${nickname}( ${id} ) ـ ${user.score}`];
   }, []);
   let text = api
     .utility()
