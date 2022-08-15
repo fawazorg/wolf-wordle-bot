@@ -1,6 +1,6 @@
 {
   "name": "wolf-wordle-bot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "dependencies": {
     "canvas": "^2.9.3",
