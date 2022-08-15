@@ -44,12 +44,12 @@ class wordle {
   async submitGuess(guess, userID) {
     this.currentGuess = guess;
     if (this.currentGuess === this.solution) {
+      games.delete(this.gid);
       this.setGuesses();
       await this.sendImage();
       const score = 6 - this.turn;
       await addScore(userID, score);
       await gameWon(this.gid, this.language, userID, score);
-      games.delete(this.gid);
       return;
     }
     if (this.history.includes(this.currentGuess)) {

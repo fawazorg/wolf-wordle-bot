@@ -71,7 +71,7 @@
   },
   {
     "name": "message_start",
-    "value": "The game has been begin, start guess with five letter word, good luck guys."
+    "value": "The game has been begin, start guess with five letter word start with #\nex: #words"
   },
   {
     "name": "message_lose",
