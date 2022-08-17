@@ -11,15 +11,15 @@ const handleMessages = async (msg) => {
   if (!games.has(msg.targetGroupId)) {
     return;
   }
-  if (isSpam(msg.targetGroupId)) {
-    return;
-  }
   const hashtag = await isGroupHashtag(msg.targetGroupId);
   if (hashtag && msg.body.charAt(0) !== "#") {
     return;
   }
   let word = hashtag ? msg.body.replace("#", "") : msg.body;
   if (word.length !== 5) {
+    return;
+  }
+  if (isSpam(msg.targetGroupId)) {
     return;
   }
   // submit the word
