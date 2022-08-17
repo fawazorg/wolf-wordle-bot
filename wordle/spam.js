@@ -14,9 +14,12 @@ const groupHit = (id) => {
 };
 
 const isSpam = (id) => {
-  groupHit(id);
+  if (!Groups.has(id)) {
+    groupHit(id);
+  }
   const group = Groups.get(id);
   if (group.hit <= TOTAL_MESSAGES) {
+    groupHit(id);
     return false;
   }
   return true;
