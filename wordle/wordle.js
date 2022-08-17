@@ -38,8 +38,8 @@ class wordle {
     });
     return this.language === "ar" ? formattedGuess.reverse() : formattedGuess;
   }
-  async start() {
-    return await gameStart(this.gid, this.language);
+  async start(hashtag) {
+    return await gameStart(this.gid, this.language, hashtag);
   }
   async submitGuess(guess, userID) {
     this.currentGuess = guess;

@@ -4,7 +4,8 @@ const Add = require("./add");
 const Delete = require("./delete");
 const Join = require("./join");
 const Solve = require("./solve");
-const Commands = [Help, Add, Delete, Join, Solve];
+const Refresh = require("./refresh");
+const Commands = [Help, Add, Delete, Join, Solve, Refresh];
 
 Default.children = Commands;
 

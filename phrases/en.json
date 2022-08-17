@@ -8,6 +8,14 @@
     "value": "help"
   },
   {
+    "name": "command_cancel",
+    "value": "cancel"
+  },
+  {
+    "name": "command_toggle",
+    "value": "toggle"
+  },
+  {
     "name": "command_info",
     "value": "info"
   },
@@ -26,6 +34,10 @@
   {
     "name": "command_admin_add",
     "value": "add"
+  },
+  {
+    "name": "command_admin_refresh",
+    "value": "refresh"
   },
   {
     "name": "command_admin_delete",
@@ -51,6 +63,7 @@
       "!wordle admin delete <word> - delete a word",
       "!wordle admin solve <groupId> - show the solution for a group",
       "!wordle admin join <groupID> - join group",
+      "!wordle admin refresh - update group list",
       "!wordle admin help - show this menu"
     ]
   },
@@ -60,9 +73,11 @@
       "Welcome to wordle bot:",
       "!wordle - start new game.",
       "!wordle info - show a simple explanation about the game",
-      "!wordle help - show this menu",
+      "!wordle cancel - cancel the current game",
+      "!wordle toggle - enable/disable hashtag \"#\"",
       "!wordle score - show your score and your rank",
-      "!wordle top - show the top players"
+      "!wordle top - show the top players",
+      "!wordle help - show this menu"
     ]
   },
   {
@@ -71,7 +86,11 @@
   },
   {
     "name": "message_start",
-    "value": "The game has been begin, start guess with five letter word start with #\nex: #words"
+    "value": "The game has been begin, start guess with five letter word "
+  },
+  {
+    "name": "message_start_hashtag",
+    "value": "start with #\nex: #words"
   },
   {
     "name": "message_lose",
@@ -80,6 +99,26 @@
   {
     "name": "message_history",
     "value": "(n) You have already entered this word \"{guess}\", try another word."
+  },
+  {
+    "name": "message_cancel_done",
+    "value": "(y) The game has been cancelled."
+  },
+  {
+    "name": "message_cancel_error",
+    "value": "(n) There is no game to cancel."
+  },
+  {
+    "name": "message_toggle_enabled",
+    "value": "(y) Hashtag has been enabled."
+  },
+  {
+    "name": "message_toggle_disabled",
+    "value": "(y) Hashtag has been disabled"
+  },
+  {
+    "name": "message_refresh",
+    "value": "(y) The following groups have been updated: \n{groupsNames}."
   },
   {
     "name": "message_win",

@@ -1,21 +1,25 @@
 const games = require("../data/games");
 const { isLanguage } = require("../utility");
-
+const { isSpam } = require("./spam");
+const { isGroupHashtag } = require("./group");
 /**
  *
  * @param {import("wolf.js").MessageObject} msg
  */
 const handleMessages = async (msg) => {
-  if (msg.body.charAt(0) !== "#") {
-    return;
-  }
-  let word = msg.body.replace("#", "");
-  // if message is more then 5 chars
-  if (word.length !== 5) {
-    return;
-  }
   // if group have game
   if (!games.has(msg.targetGroupId)) {
+    return;
+  }
+  if (isSpam(msg.targetGroupId)) {
+    return;
+  }
+  const hashtag = await isGroupHashtag(msg.targetGroupId);
+  if (hashtag && msg.body.charAt(0) !== "#") {
+    return;
+  }
+  let word = hashtag ? msg.body.replace("#", "") : msg.body;
+  if (word.length !== 5) {
     return;
   }
   // submit the word

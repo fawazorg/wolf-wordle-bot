@@ -5,9 +5,11 @@ const getPhrase = (language, phrase) => {
   return api.phrase().getByLanguageAndName(language, phrase);
 };
 
-const gameStart = async (gid, language) => {
+const gameStart = async (gid, language, hashtag) => {
   let phrase = getPhrase(language, "message_start");
-  await api.messaging().sendGroupMessage(gid, phrase, { formatting: { me: true } });
+  let phraseHashtag = getPhrase(language, "message_start_hashtag");
+  const text = hashtag ? phrase + phraseHashtag : phrase;
+  await api.messaging().sendGroupMessage(gid, text, { formatting: { me: true } });
 };
 
 const gameWon = async (gid, language, uid, score) => {
