@@ -1,7 +1,7 @@
 const Groups = new Map();
 
 const TOTAL_MESSAGES = 1;
-const PER_SECONDS = 5;
+const PER_SECONDS = 2;
 
 const groupHit = (id) => {
   if (Groups.has(id)) {

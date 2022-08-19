@@ -86,15 +86,15 @@
   },
   {
     "name": "message_start",
-    "value": "The game has been begin, start guess with five letter word "
+    "value": "The game has been begin, start guess with five letter word"
   },
   {
     "name": "message_start_hashtag",
-    "value": "start with #\nex: #words"
+    "value": " start with #\nex: #words"
   },
   {
     "name": "message_lose",
-    "value": "(n) Unfortunately, the game is over, and the word was: {solution} .\n Good luck next time."
+    "value": "(n) Unfortunately, the game is over, and the word was: {solution}\nGood luck next time."
   },
   {
     "name": "message_history",
@@ -122,7 +122,7 @@
   },
   {
     "name": "message_win",
-    "value": "I'm so glad that user {nickname} ({id}) with his usual cleverness solved the word, and he got a {score} points."
+    "value": "(y) {nickname} ({id}) This is correct. And you got {score} points."
   },
   {
     "name": "message_my_score",
@@ -134,7 +134,7 @@
   },
   {
     "name": "message_top_players",
-    "value": "Top 10 List: \n\n{list}"
+    "value": "Top 10 Players:\n\n{list}"
   },
   {
     "name": "message_admin_add",
