@@ -82,7 +82,7 @@
   },
   {
     "name": "message_info",
-    "value": "Guess the WORDLE in 6 tries.\n\nEach guess must be a valid 5-letter word. Hit the enter button to submit.\n\nAfter each guess, the color of the tiles will change to show how close your guess was to the word.\n\nThe green letter means is in the word and in the correct spot.\n\nThe yellow letter means is in the word but in the wrong spot.\n\nThe Gray letter means is not in the word in any spot."
+    "value": "Guess the WORDLE in 6 tries.\n\nEach guess must be a valid 5-letter word.\n\nAfter each guess, the color of the tiles will change to show how close your guess was to the word.\n\nThe green letter means is in the word and in the correct spot.\n\nThe yellow letter means is in the word but in the wrong spot.\n\nThe Gray letter means is not in the word in any spot."
   },
   {
     "name": "message_start",

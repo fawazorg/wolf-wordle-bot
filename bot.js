@@ -20,12 +20,4 @@ api.on("ready", () => {
   console.log(`[*][${api.config.keyword}] is ready`);
 });
 
-api.on("joinedGroup", async (group) => {
-  await setLastActive(group.id);
-});
-
-api.on("leftGroup", async (group) => {
-  await deleteGroup(group.id);
-});
-
 api.login(process.env.EMAIL, process.env.PASSWORD);

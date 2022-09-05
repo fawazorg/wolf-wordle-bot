@@ -3,8 +3,22 @@ const { createCanvas, registerFont } = require("canvas");
 const isLanguage = (text, language) => {
   const AR_LETTERS = /^[\u0621-\u064A]+$/;
   const EN_LETTERS = /^[a-zA-Z]+$/;
+  const TR_LETTERS = /^[a-zA-ZğüşöçıİĞÜŞÖÇ]+$/;
   const regex = language === "ar" ? AR_LETTERS : EN_LETTERS;
-  return regex.test(text);
+  switch (language) {
+    case "ar":
+      return AR_LETTERS.test(text);
+      break;
+    case "tr":
+      return TR_LETTERS.test(text);
+      break;
+    case "en":
+      return EN_LETTERS.test(text);
+      break;
+    default:
+      return EN_LETTERS.test(text);
+      break;
+  }
 };
 
 const toImage = (rows) => {

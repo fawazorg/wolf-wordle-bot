@@ -10,7 +10,11 @@ const start = async (command) => {
   // set a word
   const solution = await Word.random(command.language);
   // init game object
-  const game = new wordle(command.targetGroupId, solution.text.toUpperCase(), command.language);
+  const game = new wordle(
+    command.targetGroupId,
+    solution.text.toUpperCase().replace("ة", "ه"),
+    command.language
+  );
   games.set(command.targetGroupId, game);
   // send start game
   const hashtag = await isGroupHashtag(command.targetGroupId);

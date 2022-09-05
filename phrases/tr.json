@@ -1,0 +1,205 @@
+[
+  {
+    "name": "command_default",
+    "value": "!wordletr"
+  },
+  {
+    "name": "command_help",
+    "value": "yardım"
+  },
+  {
+    "name": "command_help",
+    "value": "yardim"
+  },
+  {
+    "name": "command_cancel",
+    "value": "iptal"
+  },
+  {
+    "name": "command_toggle",
+    "value": "değiş"
+  },
+  {
+    "name": "command_toggle",
+    "value": "degis"
+  },
+  {
+    "name": "command_info",
+    "value": "bilgi"
+  },
+  {
+    "name": "command_my_score",
+    "value": "skor"
+  },
+  {
+    "name": "command_top_players",
+    "value": "enler"
+  },
+  {
+    "name": "command_admin",
+    "value": "yönet"
+  },
+  {
+    "name": "command_admin_add",
+    "value": "add"
+  },
+  {
+    "name": "command_admin_refresh",
+    "value": "yenile"
+  },
+  {
+    "name": "command_admin_delete",
+    "value": "sil"
+  },
+  {
+    "name": "command_admin_join",
+    "value": "gir"
+  },
+  {
+    "name": "command_admin_solve",
+    "value": "çöz"
+  },
+  {
+    "name": "message_admin_default",
+    "value": "Wordle yöneticiye hoş geldin\n\nBaşlamak için !wordletr yönet yaz."
+  },
+  {
+    "name": "message_admin_help",
+    "value": [
+      "Yönetici menüsüne hoş geldin:",
+      "!wordletr yönet ekle <kelime> - Yeni kelime ekle",
+      "!wordletr yönet sil <word> - Bir kelimeyi sil",
+      "!wordletr yönet çöz <grup id> - Gruptaki çözümü göster",
+      "!wordletr yönet gir <grup id> - Bir gruba gir",
+      "!wordletr yönet yenile - Grup listesini yenile",
+      "!wordletr yönet yardım - Bu menüyü göster"
+    ]
+  },
+  {
+    "name": "message_help",
+    "value": [
+      "Wordle Bot'a hoş geldiniz:",
+      "!wordletr - Yeni oyun başlat",
+      "!wordletr bilgi - Oyun hakkında kısa bilgiler",
+      "!wordletr iptal - Mevcut oyunu iptal et",
+      "!wordletr değiş - Etiket aç/kapat \"#\"",
+      "!wordletr skor - Kendi skorunu ve sıranı gör",
+      "!wordletr enler - En iyi oyuncuları gör",
+      "!wordletr yardım - Bu menüyü göster"
+    ]
+  },
+  {
+    "name": "message_info",
+    "value": "≣ Nasıl Oynanır?\n\n• 6 tahminde Wordle'yi tahmin etmeniz istenir.\n• Her tahmin geçerli bir 5 harfli kelime olmalı.\n• Her tahminden sonra, tahmininizin kelimeye ne kadar yakın olduğunu göstermek için harflerin rengi değişecektir.\n• Yeşil harf, kelimede ve doğru yerde demektir.\n• Sarı harf, kelimede ama yanlış yerde demektir.\n• Gri harf, kelimenin hiçbir yerinde olmadığı anlamına gelir."
+  },
+  {
+    "name": "message_start",
+    "value": "Oyun başladı, 5 harfli kelimeleri bulmaya başla"
+  },
+  {
+    "name": "message_start_hashtag",
+    "value": " # ile başlayın\nörn: #çiçek"
+  },
+  {
+    "name": "message_lose",
+    "value": "(n) Maalesef oyun bitti. Çözüm `{solution}` olacaktı\nBir dahaki sefere..."
+  },
+  {
+    "name": "message_history",
+    "value": "(n) `{guess}` kelimesini zaten girdin, başka kelime dene."
+  },
+  {
+    "name": "message_cancel_done",
+    "value": "(y) Oyun iptal edildi."
+  },
+  {
+    "name": "message_cancel_error",
+    "value": "(n) İptal edilecek bir oyun yok."
+  },
+  {
+    "name": "message_toggle_enabled",
+    "value": "(y) #Etiket kullanımı açıldı."
+  },
+  {
+    "name": "message_toggle_disabled",
+    "value": "(y) #Etiket kullanımı kapatıldı."
+  },
+  {
+    "name": "message_refresh",
+    "value": "(y) Şu gruplar güncellendi: \n{groupsNames}."
+  },
+  {
+    "name": "message_win",
+    "value": "(y) {nickname} ({id}) Tebrikler! Bu doğru cevap için {score} puan kazandın."
+  },
+  {
+    "name": "message_my_score",
+    "value": "Sıralama ve toplam puanın:\n\nSıra: {GlobalRank}\nToplam: {score} puan \n{nickname} ( {id} )"
+  },
+  {
+    "name": "message_my_score_error",
+    "value": "Bu botta henüz hiç puanın yok. :(\n{nickname} ( {id} )"
+  },
+  {
+    "name": "message_top_players",
+    "value": "En İyi 10 Oyuncu:\n\n{list}"
+  },
+  {
+    "name": "message_admin_add",
+    "value": "(y) Kelime başarıyla eklendi."
+  },
+  {
+    "name": "message_admin_add_error",
+    "value": "(n) Kelime 5 harfli olmalıdır."
+  },
+  {
+    "name": "message_admin_add_exists",
+    "value": "(n) Kelime zaten mevcut."
+  },
+  {
+    "name": "message_admin_delete",
+    "value": "(y) Kelime başarıyla silindi."
+  },
+  {
+    "name": "message_admin_delete_error",
+    "value": "(n) Kelime bulunamadı."
+  },
+  {
+    "name": "message_admin_solve",
+    "value": "Oyunun çözümü : {solution}"
+  },
+  {
+    "name": "message_admin_solve_error",
+    "value": "(n) Bu grupta bir oyun yok."
+  },
+  {
+    "name": "message_admin_join",
+    "value": [
+      { "code": 200, "msg": "İstenilen gruba başarıyla girdim." },
+      { "code": 404, "msg": "İstenilen grup bulunamıyor." },
+      { "code": 401, "subCode": 1, "msg": "Geçersiz grup şifresi." },
+      {
+        "code": 403,
+        "subCode": 4,
+        "msg": "Bu grubun giriş seviyesi limiti botun seviyesinden daha yüksek."
+      },
+      { "code": 403, "subCode": 100, "msg": "Grup dolu durumda." },
+      {
+        "code": 403,
+        "subCode": 101,
+        "msg": "Bot girebileceği en fazla grup sayısına ulaştı."
+      },
+      { "code": 403, "subCode": 105, "msg": "Bu grup artık yok." },
+      { "code": 403, "subCode": 107, "msg": "Bu gruptan yasaklanmışsınız." },
+      { "code": 403, "subCode": 110, "msg": "Zaten bu gruptasınız!" },
+      { "code": 403, "subCode": 112, "msg": "Bu grup yeni kullanıcılara kapalı." },
+      { "code": 403, "subCode": 115, "msg": "Bu grup kapatılmış." },
+      { "code": 403, "subCode": 116, "msg": "Belki de çok fazla yeni hesap açtınız?" },
+      { "code": 403, "subCode": 117, "msg": "Bu gruba sadece bir oyun aracılığı ile girilebilir." }
+    ]
+  },
+  {
+    "name": "error_must_be_number",
+    "value": "(n) Parametre bir rakam olmalı."
+  }
+]
