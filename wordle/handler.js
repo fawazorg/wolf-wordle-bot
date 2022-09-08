@@ -25,7 +25,10 @@ const handleMessages = async (msg) => {
   // submit the word
   let game = games.get(msg.targetGroupId);
   if (isLanguage(word, game.language)) {
-    await game.submitGuess(word.toUpperCase().replace("ة", "ه"), msg.sourceSubscriberId);
+    await game.submitGuess(
+      word.toLocaleUpperCase(game.language).replace("ة", "ه"),
+      msg.sourceSubscriberId
+    );
   }
 };
 

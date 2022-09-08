@@ -12,7 +12,7 @@ const start = async (command) => {
   // init game object
   const game = new wordle(
     command.targetGroupId,
-    solution.text.toUpperCase().replace("ة", "ه"),
+    solution.text.toLocaleUpperCase(command.language).replace("ة", "ه"),
     command.language
   );
   games.set(command.targetGroupId, game);
