@@ -6,7 +6,8 @@ const COMMAND_TRIGGER = "command_admin_delete";
 
 AdminDelete = async (api, command) => {
   const isDeveloper = command.sourceSubscriberId === api.options.developerId;
-  if (!isDeveloper) {
+  const isAdminGroup = command.targetGroupId === 18813643;
+  if (!isDeveloper && !isAdminGroup) {
     return;
   }
   await Delete(command);

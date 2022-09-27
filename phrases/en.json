@@ -86,7 +86,7 @@
   },
   {
     "name": "message_start",
-    "value": "The game has been begin, start guess with five letter word"
+    "value": "The game has begun, start guess with five letter word"
   },
   {
     "name": "message_start_hashtag",
