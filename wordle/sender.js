@@ -87,9 +87,9 @@ const myScoreError = async (gid, language, uid) => {
 const sendTopPlayers = async (gid, language, players = []) => {
   let phrase = getPhrase(language, "message_top_players");
   // Thanks to Burak (3465374)
-  const userProfiles = await api.subscriber().getByIds(players.map((p) => p.uid));
+  const usersProfiles = await api.subscriber().getByIds(players.map((p) => p.uid));
   let list = players.map((player, i) => {
-    let { nickname, id } = userProfiles.find((user) => user.id == player.uid);
+    let { nickname, id } = usersProfiles.find((user) => user.id == player.uid);
     return `${i + 1} ـ  ${nickname}( ${id} ) ـ ${player.score}`;
   });
   let text = api
