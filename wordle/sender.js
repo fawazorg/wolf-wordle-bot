@@ -86,11 +86,12 @@ const myScoreError = async (gid, language, uid) => {
 
 const sendTopPlayers = async (gid, language, players = []) => {
   let phrase = getPhrase(language, "message_top_players");
-  let list = await players.reduce(async (pv, user, i) => {
-    let names = await pv;
-    let { nickname, id } = await api.subscriber().getById(user.uid);
-    return [...names, `${i + 1} ـ  ${nickname}( ${id} ) ـ ${user.score}`];
-  }, []);
+  // Thanks to Burak (3465374)
+  const userProfiles = await api.subscriber().getByIds(players.map((p) => p.uid));
+  let list = players.map((player, i) => {
+    let { nickname, id } = userProfiles.find((user) => user.id == player.uid);
+    return `${i + 1} ـ  ${nickname}( ${id} ) ـ ${player.score}`;
+  });
   let text = api
     .utility()
     .string()
