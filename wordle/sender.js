@@ -1,6 +1,6 @@
 const { api } = require("../bot");
 const { toImage } = require("../utility/index");
-
+const { setLastActive } = require("./active");
 const getPhrase = (language, phrase) => {
   return api.phrase().getByLanguageAndName(language, phrase);
 };
@@ -13,6 +13,7 @@ const gameStart = async (gid, language, hashtag) => {
 };
 
 const gameWon = async (gid, language, uid, score) => {
+  await setLastActive(gid);
   let phrase = getPhrase(language, "message_win");
   let user = await api.subscriber().getById(uid);
   let text = api
@@ -22,6 +23,7 @@ const gameWon = async (gid, language, uid, score) => {
   await api.messaging().sendGroupMessage(gid, text, { formatting: { me: true } });
 };
 const gameLose = async (gid, language, solution) => {
+  await setLastActive(gid);
   let phrase = getPhrase(language, "message_lose");
   let text = api.utility().string().replace(phrase, { solution });
   await api.messaging().sendGroupMessage(gid, text, { formatting: { me: true } });

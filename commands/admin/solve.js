@@ -13,5 +13,5 @@ AdminSolve = async (api, command) => {
 };
 
 module.exports = new Command(COMMAND_TRIGGER, {
-  group: (command) => AdminSolve(api, command),
+  both: (command) => AdminSolve(api, command),
 });

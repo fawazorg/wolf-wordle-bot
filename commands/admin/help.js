@@ -14,5 +14,5 @@ AdminHelp = async (api, command) => {
 };
 
 module.exports = new Command(COMMAND_TRIGGER, {
-  group: (command) => AdminHelp(api, command),
+  both: (command) => AdminHelp(api, command),
 });

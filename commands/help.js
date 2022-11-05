@@ -10,5 +10,5 @@ Help = async (api, command) => {
 };
 
 module.exports = new Command(COMMAND_TRIGGER, {
-  group: (command) => Help(api, command),
+  both: (command) => Help(api, command),
 });

@@ -36,6 +36,10 @@
     "value": "add"
   },
   {
+    "name": "command_admin_count",
+    "value": "count"
+  },
+  {
     "name": "command_admin_refresh",
     "value": "refresh"
   },
@@ -117,10 +121,6 @@
     "value": "(y) Hashtag has been disabled"
   },
   {
-    "name": "message_refresh",
-    "value": "(y) The following groups have been updated: \n{groupsNames}."
-  },
-  {
     "name": "message_win",
     "value": "(y) {nickname} ({id}) This is correct. And you got {score} points."
   },
@@ -191,7 +191,23 @@
     ]
   },
   {
+    "name": "auto_leave_message",
+    "value": "/me Sorry, You haven't played for the past five days so I'm leaving this group :("
+  },
+  {
+    "name": "admin_join_log",
+    "value": "/alert ⚙ Command Action\n\n•Command : Join\n•Admin : {adminNickname} ({adminID})\n•Group:[{groupName}] ({groupID})"
+  },
+  {
     "name": "error_must_be_number",
     "value": "(n) The entry must be a number."
+  },
+  {
+    "name": "admin_refresh_message",
+    "value": "/me we just update this groups:\n{list}"
+  },
+  {
+    "name": "admin_count_message",
+    "value": "/me Count Groups : {count}."
   }
 ]

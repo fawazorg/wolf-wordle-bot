@@ -7,9 +7,9 @@
     "cli-progress": "^3.11.2",
     "dotenv": "^16.0.1",
     "mongoose": "^6.5.1",
+    "node-schedule": "^2.1.0",
     "wolf.js": "^1.6.1"
   },
-  "devDependencies": {},
   "scripts": {
     "seed": "node seed.js"
   },

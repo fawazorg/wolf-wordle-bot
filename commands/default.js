@@ -6,6 +6,9 @@ const { isSpam } = require("../wordle/spam");
 const COMMAND_TRIGGER = "command_default";
 
 Default = async (api, command) => {
+  if (!command.isGroup) {
+    return;
+  }
   if (isSpam(command.targetGroupId)) {
     return;
   }
@@ -17,5 +20,5 @@ Default = async (api, command) => {
 };
 
 module.exports = new Command(COMMAND_TRIGGER, {
-  group: (command) => Default(api, command),
+  both: (command) => Default(api, command),
 });

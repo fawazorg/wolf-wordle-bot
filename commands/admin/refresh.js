@@ -1,8 +1,9 @@
 const { Command } = require("wolf.js");
 const { api } = require("../../bot");
-const { refreshGroupsHashtag } = require("../../wordle/group");
+const { refreshUnsetGroup } = require("../../wordle/active");
 
 const COMMAND_TRIGGER = "command_admin_refresh";
+const COMMAND_RESPONSE = "admin_refresh_message";
 
 AdminRefresh = async (api, command) => {
   const isDeveloper = command.sourceSubscriberId === api.options.developerId;
@@ -10,11 +11,13 @@ AdminRefresh = async (api, command) => {
     return;
   }
   // message_refresh
-  let groups = await api.group().list();
-  let groupsNames = await refreshGroupsHashtag(groups);
-  let phrase = api.phrase().getByCommandAndName(command, "message_refresh");
-  let text = api.utility().string().replace(phrase, { groupsNames });
-  await api.messaging().sendMessage(command, text, { formatting: { me: true } });
+  let names = await refreshUnsetGroup(api);
+  let phrase = api.phrase().getByCommandAndName(command, COMMAND_RESPONSE);
+  let content = api
+    .utility()
+    .string()
+    .replace(phrase, { list: names.join("\n") });
+  await api.messaging().sendMessage(command, content);
 };
 
 module.exports = new Command(COMMAND_TRIGGER, {

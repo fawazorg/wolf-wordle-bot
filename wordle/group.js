@@ -15,16 +15,6 @@ const removeGroupHashtag = async (gid) => {
     throw error;
   }
 };
-
-const refreshGroupsHashtag = async (groups) => {
-  const groupsNames = groups.reduce(async (pv, group) => {
-    let names = await pv;
-    await addGroupHashtag(group.id);
-    return [...names, `[${group.name}]`];
-  }, []);
-  return groupsNames;
-};
-
 const isGroupHashtag = async (gid) => {
   try {
     const group = await Group.findOne({ gid });
@@ -46,7 +36,6 @@ const toggleGroupHashtag = async (gid) => {
 module.exports = {
   addGroupHashtag,
   removeGroupHashtag,
-  refreshGroupsHashtag,
   isGroupHashtag,
   toggleGroupHashtag,
 };
