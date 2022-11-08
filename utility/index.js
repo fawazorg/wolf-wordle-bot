@@ -1,4 +1,12 @@
 const { createCanvas, registerFont } = require("canvas");
+registerFont("data/AbdoLine.ttf", { family: "AbdoLine" });
+const canvas = createCanvas(700, 840);
+const ctx = canvas.getContext("2d");
+const gray = "#3a3a3c";
+const green = "#538d4e";
+const yellow = "#b59f3b";
+const height = 140;
+const padding = 8;
 
 const isLanguage = (text, language) => {
   const AR_LETTERS = /^[\u0621-\u064A]+$/;
@@ -22,20 +30,11 @@ const isLanguage = (text, language) => {
 };
 
 const toImage = (rows) => {
-  const canvas = createCanvas(700, 840);
-  registerFont("data/AbdoLine.ttf", { family: "AbdoLine" });
-
-  const ctx = canvas.getContext("2d");
   ctx.imageSmoothingQuality = "high";
   ctx.imageSmoothingEnabled = true;
   ctx.globalCompositeOperation = "source-over";
   ctx.quality = "best";
   ctx.lineWidth = 2;
-  const gray = "#3a3a3c";
-  const green = "#538d4e";
-  const yellow = "#b59f3b";
-  const height = 140;
-  const padding = 8;
 
   const fillCanvas = () => {
     ctx.beginPath();
