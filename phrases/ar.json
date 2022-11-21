@@ -40,8 +40,20 @@
     "value": "تحديث"
   },
   {
+    "name": "command_admin_update",
+    "value": "حالة"
+  },
+  {
+    "name": "command_admin_update",
+    "value": "حاله"
+  },
+  {
     "name": "command_admin_add",
     "value": "اضافة"
+  },
+  {
+    "name": "command_admin_add_contact",
+    "value": "اضفني"
   },
   {
     "name": "command_admin_delete",
@@ -87,6 +99,14 @@
       "!كلمات شامل - لعرض افضل اللاعبين في البوت",
       "!كلمات مساعدة - لعرض هذه القائمة"
     ]
+  },
+  {
+    "name": "admin_update_message",
+    "value": "- تم تحديث الحالة الى : {status}"
+  },
+  {
+    "name": "admin_contact_message",
+    "value": "(y) اضفتك"
   },
   {
     "name": "message_info",

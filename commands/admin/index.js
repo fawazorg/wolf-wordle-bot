@@ -6,8 +6,10 @@ const Join = require("./join");
 const Solve = require("./solve");
 const Refresh = require("./refresh");
 const Count = require("./count");
+const Update = require("./update");
+const ContactAdd = require("./contactAdd");
 
-const Commands = [Help, Add, Delete, Join, Solve, Refresh, Count];
+const Commands = [Help, Add, Delete, Join, Solve, Refresh, Count, Update, ContactAdd];
 
 Default.children = Commands;
 

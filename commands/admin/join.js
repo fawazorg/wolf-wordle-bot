@@ -1,7 +1,7 @@
 const { Validator, Command } = require("wolf.js");
 const { api } = require("../../bot");
 const Group = require("../../models/group");
-const { AdminGroup } = require("../../data/admin");
+const { AdminGroup, admins } = require("../../data/admin");
 
 const COMMAND_TRIGGER = "command_admin_join";
 const COMMAND_RESPONSE = "message_admin_join";
@@ -9,7 +9,8 @@ const COMMAND_JOIN_LOG = "admin_join_log";
 
 AdminJoin = async (api, command) => {
   const isDeveloper = command.sourceSubscriberId === api.options.developerId;
-  if (!isDeveloper) {
+  const isAdmin = admins.includes(command.sourceSubscriberId);
+  if (!isDeveloper || !isAdmin) {
     return;
   }
   if (!Validator.isValidNumber(command.argument)) {
