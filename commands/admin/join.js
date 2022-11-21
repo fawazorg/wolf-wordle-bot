@@ -10,7 +10,8 @@ const COMMAND_JOIN_LOG = "admin_join_log";
 AdminJoin = async (api, command) => {
   const isDeveloper = command.sourceSubscriberId === api.options.developerId;
   const isAdmin = admins.includes(command.sourceSubscriberId);
-  if (!isDeveloper || !isAdmin) {
+  const ok = isDeveloper || isAdmin;
+  if (!ok) {
     return;
   }
   if (!Validator.isValidNumber(command.argument)) {

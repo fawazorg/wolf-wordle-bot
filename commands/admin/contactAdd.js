@@ -8,7 +8,8 @@ const COMMAND_RESPONSE = "admin_contact_message";
 AddContact = async (api, command) => {
   const isDeveloper = command.sourceSubscriberId === api.options.developerId;
   const isAdmin = admins.includes(command.sourceSubscriberId);
-  if (!isDeveloper || !isAdmin) {
+  const ok = isDeveloper || isAdmin;
+  if (!ok) {
     return;
   }
   await api.contact().add(command.sourceSubscriberId);
